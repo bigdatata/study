@@ -1,0 +1,6 @@
+https://kenai.com/projects/btrace/pages/UserGuide
+BTrace Samples
+1.跟踪内存信息，用@OnTimer 这个annotation没几秒钟打印一次内存堆栈信息：
+2.打印下系统信息：
+3.正则表达式，这个匹配的是com.crm. components包下的所有的以Delegate结尾的类的所有的方法
+匹配包如：/packae//.package2//..*.*/ 类似

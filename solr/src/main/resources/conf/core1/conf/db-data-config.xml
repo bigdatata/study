@@ -1,0 +1,64 @@
+<dataConfig>
+    <dataSource driver="${db_driverClassName}" url="${db_url}" user="${db_username}" password="${db_password}"/>
+    <document>
+        <entity name="report" pk="id" batchSize="5000" preImportDeleteQuery="*:*" query="select id,
+        kwId,aName,pName,uName,kwd,aStatus,pStatus,url,mDec,bid,rang,clicks,imp,cost,cpc,bounce,conv,vOrder,
+        vom,dvo,dvom,cOrder,com,dco,dcom,tOrder,tom,dto,dtom,oUsers,newUsers,nuo,foou,nuom,fooum,plat,yn,
+        aid,pid,uid,aoac,roi,ctr,orders,ordersm,date_add(createTime, interval +8 hour) as createTime,
+        date_add(modifyTime, interval +8 hour) as modifyTime,date_add(date, interval +8 hour) as date,
+        date_add(endTime, interval +8 hour) as endTime from kwSearch
+        where '${dataimporter.request.clean}' != 'false' OR modifyTime > '${dataimporter.last_index_time}'">
+            <field name="id" column="id"/>
+            <field name="kwId" column="kwId"/>
+            <field name="aName" column="aName"/>
+            <field name="pName" column="pName"/>
+            <field name="uName" column="uName"/>
+            <field name="kwd" column="kwd"/>
+            <field name="aStatus" column="aStatus"/>
+            <field name="pStatus" column="pStatus"/>
+            <field name="url" column="url"/>
+            <field name="mDec" column="mDec"/>
+            <field name="bid" column="bid"/>
+            <field name="rang" column="rang"/>
+            <field name="clicks" column="clicks"/>
+            <field name="imp" column="imp"/>
+            <field name="cost" column="cost"/>
+            <field name="cpc" column="cpc"/>
+            <field name="bounce" column="bounce"/>
+            <field name="conv" column="conv"/>
+            <field name="vOrder" column="vOrder"/>
+            <field name="vom" column="vom"/>
+            <field name="dvo" column="dvo"/>
+            <field name="dvom" column="dvom"/>
+            <field name="cOrder" column="cOrder"/>
+            <field name="com" column="com"/>
+            <field name="dco" column="dco"/>
+            <field name="dcom" column="dcom"/>
+            <field name="tOrder" column="tOrder"/>
+            <field name="tom" column="tom"/>
+            <field name="dto" column="dto"/>
+            <field name="dtom" column="dtom"/>
+            <field name="oUsers" column="oUsers"/>
+            <field name="newUsers" column="newUsers"/>
+            <field name="nuo" column="nuo"/>
+            <field name="foou" column="foou"/>
+            <field name="nuom" column="nuom"/>
+            <field name="fooum" column="fooum"/>
+            <field name="platform" column="plat"/>
+            <field name="date" column="date"/>
+            <field name="endTime" column="endTime"/>
+            <field name="yn" column="yn"/>
+            <field name="createTime" column="createTime"/>
+            <field name="modifyTime" column="modifyTime"/>
+            <field name="accountId" column="aid"/>
+            <field name="planId" column="pid"/>
+            <field name="groupId" column="uid"/>
+            <field name="aoac" column="aoac"/>
+            <field name="roi" column="roi"/>
+            <field name="ctr" column="ctr"/>
+            <field name="orders" column="orders"/>
+            <field name="ordersm" column="ordersm"/>
+        </entity>
+    </document>
+</dataConfig>
+

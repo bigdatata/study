@@ -1,0 +1,134 @@
+<?xml version="1.0" ?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<schema name="report" version="1.5">
+    <types>
+        <fieldtype name="text" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+            <analyzer type="index">
+                <tokenizer class="org.apache.lucene.analysis.ngram.NGramTokenizerFactory" minGramSize="1"
+                           maxGramSize="50"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.KeywordRepeatFilterFactory"/>
+                <filter class="org.apache.lucene.analysis.en.PorterStemFilterFactory"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.RemoveDuplicatesTokenFilterFactory"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.TrimFilterFactory"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="org.apache.lucene.analysis.core.WhitespaceTokenizerFactory"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.TrimFilterFactory"/>
+            </analyzer>
+        </fieldtype>
+        <fieldtype name="urlText" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+            <analyzer type="index">
+                <tokenizer class="org.apache.lucene.analysis.ngram.NGramTokenizerFactory" minGramSize="1"
+                           maxGramSize="50"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.KeywordRepeatFilterFactory"/>
+                <filter class="org.apache.lucene.analysis.en.PorterStemFilterFactory"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.RemoveDuplicatesTokenFilterFactory"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.TrimFilterFactory"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="org.apache.lucene.analysis.core.WhitespaceTokenizerFactory"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.KeywordRepeatFilterFactory"/>
+                <filter class="org.apache.lucene.analysis.en.PorterStemFilterFactory"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.RemoveDuplicatesTokenFilterFactory"/>
+                <filter class="org.apache.lucene.analysis.miscellaneous.TrimFilterFactory"/>
+            </analyzer>
+        </fieldtype>
+        <fieldtype name="prefixText" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+            <analyzer type="index">
+                <tokenizer class="org.apache.lucene.analysis.core.KeywordTokenizerFactory"/>
+                <filter class="org.apache.solr.analysis.ReversedWildcardFilterFactory"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="org.apache.lucene.analysis.core.KeywordTokenizerFactory"/>
+                <filter class="org.apache.solr.analysis.ReversedWildcardFilterFactory"/>
+            </analyzer>
+        </fieldtype>
+        <fieldtype name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true"/>
+        <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0" omitNorms="true"/>
+        <fieldType name="int" class="solr.TrieIntField" omitNorms="true"/>
+        <fieldType name="double" class="solr.TrieDoubleField" omitNorms="true"/>
+        <fieldType name="date" class="solr.DateField" sortMissingLast="true" omitNorms="true"/>
+    </types>
+
+    <fields>
+        <!-- general -->
+        <field name="id" type="long" indexed="true" stored="true"/>
+        <field name="kwId" type="long" indexed="true" stored="true"/>
+        <field name="aName" type="string" indexed="true" stored="true"/>
+        <field name="pName" type="string" indexed="true" stored="true"/>
+        <field name="uName" type="string" indexed="true" stored="true"/>
+        <field name="kwd" type="string" indexed="true" stored="true"/>
+        <field name="aStatus" type="int" indexed="true" stored="true"/>
+        <field name="pStatus" type="int" indexed="true" stored="true"/>
+        <field name="url" type="string" indexed="true" stored="true"/>
+        <field name="mDec" type="string" indexed="true" stored="true"/>
+        <field name="bid" type="double" indexed="true" stored="true"/>
+        <field name="rang" type="double" indexed="true" stored="true"/>
+        <field name="clicks" type="long" indexed="true" stored="true"/>
+        <field name="imp" type="long" indexed="true" stored="true"/>
+        <field name="cost" type="double" indexed="true" stored="true"/>
+        <field name="cpc" type="double" indexed="true" stored="true"/>
+        <field name="bounce" type="double" indexed="true" stored="true"/>
+        <field name="conv" type="double" indexed="true" stored="true"/>
+        <field name="vOrder" type="int" indexed="true" stored="true"/>
+        <field name="vom" type="double" indexed="true" stored="true"/>
+        <field name="dvo" type="int" indexed="true" stored="true"/>
+        <field name="dvom" type="double" indexed="true" stored="true"/>
+        <field name="cOrder" type="int" indexed="true" stored="true"/>
+        <field name="com" type="double" indexed="true" stored="true"/>
+        <field name="dco" type="int" indexed="true" stored="true"/>
+        <field name="dcom" type="double" indexed="true" stored="true"/>
+        <field name="tOrder" type="int" indexed="true" stored="true"/>
+        <field name="tom" type="double" indexed="true" stored="true"/>
+        <field name="dto" type="int" indexed="true" stored="true"/>
+        <field name="dtom" type="double" indexed="true" stored="true"/>
+        <field name="oUsers" type="int" indexed="true" stored="true"/>
+        <field name="newUsers" type="int" indexed="true" stored="true"/>
+        <field name="nuo" type="int" indexed="true" stored="true"/>
+        <field name="foou" type="int" indexed="true" stored="true"/>
+        <field name="nuom" type="double" indexed="true" stored="true"/>
+        <field name="fooum" type="double" indexed="true" stored="true"/>
+        <field name="platform" type="int" indexed="true" stored="true"/>
+        <field name="date" type="date" indexed="true" stored="true"/>
+        <field name="endTime" type="date" indexed="true" stored="true"/>
+        <field name="yn" type="int" indexed="true" stored="true"/>
+        <field name="createTime" type="date" indexed="true" stored="true"/>
+        <field name="modifyTime" type="date" indexed="true" stored="true"/>
+        <field name="accountId" type="long" indexed="true" stored="true"/>
+        <field name="planId" type="long" indexed="true" stored="true"/>
+        <field name="groupId" type="long" indexed="true" stored="true"/>
+        <field name="aoac" type="double" indexed="true" stored="true"/>
+        <field name="roi" type="double" indexed="true" stored="true"/>
+        <field name="ctr" type="double" indexed="true" stored="true"/>
+        <field name="orders" type="int" indexed="true" stored="true"/>
+        <field name="ordersm" type="double" indexed="true" stored="true"/>
+
+        <field name="_version_" type="long" indexed="true" stored="true"/>
+    </fields>
+
+    <!-- field to use to determine and enforce document uniqueness. -->
+    <uniqueKey>id</uniqueKey>
+
+    <!-- field for the QueryParser to use when an explicit fieldname is absent -->
+    <defaultSearchField>kwd</defaultSearchField>
+
+    <!-- SolrQueryParser configuration: defaultOperator="AND|OR" -->
+    <solrQueryParser defaultOperator="OR"/>
+</schema>
+
