@@ -14,6 +14,7 @@
         <module>btrace</module>
         <module>disruptor</module>
         <module>mongo</module>
+        <module>spider</module>
     </modules>
 
     <properties>
