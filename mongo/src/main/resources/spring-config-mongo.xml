@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+
+    <bean id="mongoUtil" class="com.jd.leo.common.util.mongo.MongoUtil"/>
+
+    <bean id="mongoDataSource" class="com.jd.leo.common.util.mongo.MongoDataSource">
+        <property name="dbName" value="${mongo.dbName}"/>
+        <property name="userName" value="${mongo.userName}"/>
+        <property name="password" value="${mongo.password}"/>
+        <property name="connectionPerHost" value="${mongo.connectionPerHost}"/>
+        <property name="connectionTimeout" value="${mongo.connectionTimeout}"/>
+        <property name="isSave" value="${mongo.isSave}"/>
+        <property name="addressList" value="${mongo.addressList}"/>
+    </bean>
+</beans>
