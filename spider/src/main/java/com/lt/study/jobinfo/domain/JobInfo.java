@@ -1,19 +1,30 @@
 package com.lt.study.jobinfo.domain;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 /**
  * Created by luotao on 2015/4/17.
  */
 public class JobInfo {
-    private String title;
-    private String salary;
-    private String  companyDep;
-    private String jobId;
-    private String companyId;
-    private String jobRequest;
-    private String  description;
-    private String  requirement;
-    private String url;
 
+    protected Integer id;
+    protected String title;
+    protected String salary;
+    protected String  companyDep;
+    protected String jobId;
+    protected Integer companyId;
+    protected String jobRequest;
+    protected String  description;
+    protected String  requirement;
+    protected String url;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -49,11 +60,11 @@ public class JobInfo {
         this.jobId = jobId;
     }
 
-    public String getCompanyId() {
+    public Integer getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(String companyId) {
+    public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
     }
 
