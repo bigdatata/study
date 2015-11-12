@@ -6,3 +6,7 @@ https://www.gitbook.com/book/looly/python-basic/details
 
 python-one-to-million
 https://www.gitbook.com/book/kxxoling/python-one-to-million/details
+
+pip install tornado
+
+pip install scrapy
