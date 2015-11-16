@@ -7,4 +7,8 @@ d = pq(url='http://jd.com/')
 # d = pq(url='http://google.com/', opener=lambda url, **kw: urllib.urlopen(url).read())
 d = pq(filename="F:\github\study\python\pyquery\Quickstart.py")
 
+number = int('10')
+print number
+
+
 

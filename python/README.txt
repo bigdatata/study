@@ -8,5 +8,3 @@ python-one-to-million
 https://www.gitbook.com/book/kxxoling/python-one-to-million/details
 
 pip install tornado
-
-pip install scrapy

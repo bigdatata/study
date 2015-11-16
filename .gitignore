@@ -45,3 +45,4 @@ Temporary Items
 /go/*.exe
 /*.iml
 .idea
+*.pyc
