@@ -18,4 +18,37 @@ Render with PhantomJS
     pyspider phantomjs     Web server running on port 25555
     pyspider
 
+Deployment
+    pip install --allow-all-external pyspider[all]
+    1.http://www.rabbitmq.com/download.html
+    http://www.erlang.org/download/otp_win64_18.1.exe
+
+    config.json
+    Although you can use command-line to specify the parameters. A config file is a better choice.
+    {
+      "taskdb": "mysql+taskdb://username:password@host:port/taskdb",
+      "projectdb": "mysql+projectdb://username:password@host:port/projectdb",
+      "resultdb": "mysql+resultdb://username:password@host:port/resultdb",
+      "message_queue": "amqp://username:password@host:port/%2F",
+      "webui": {
+        "username": "some_name",
+        "password": "some_passwd",
+        "need-auth": true
+      }
+    }
+
+    # start **only one** scheduler instance
+    pyspider -c config.json scheduler
+
+    # phantomjs
+    pyspider -c config.json phantomjs
+
+    # start fetcher / processor / result_worker instances as many as your needs
+    pyspider -c config.json --phantomjs-proxy="localhost:25555" fetcher
+    pyspider -c config.json processor
+    pyspider -c config.json result_worker
+
+    # start webui, set `--scheduler-rpc` if scheduler is not running on the same host as webui
+    pyspider -c config.json webui
+
 
