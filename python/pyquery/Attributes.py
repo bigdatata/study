@@ -1,4 +1,4 @@
-#coding:utf-8
+# -*- encoding: utf-8 -*-
 from pyquery import  PyQuery as pyQuery
 
 p = pyQuery('<p id="hello" class="hello"></p>')('p')
