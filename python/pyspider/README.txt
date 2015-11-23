@@ -14,7 +14,8 @@
     http://phantomjs.org/download.html
     add to path D:\softinstall\phantomjs-2.0.0-windows\bin
 
-Render with PhantomJS
+5.Render with PhantomJS
+     you can enable this feature by adding a parameter fetch_type='js' to self.crawl.
     pyspider phantomjs     Web server running on port 25555
     pyspider
 
