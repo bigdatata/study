@@ -11,3 +11,5 @@ scrapy 报错 no module named win32api 的解决方案
 2.Trying Selectors in the Shell
 scrapy shell "http://www.dmoz.org/Computers/Programming/Languages/Python/Books/"
 Remember to always enclose urls in quotes when running Scrapy shell from command-line, otherwise urls containing arguments (ie. & character) will not work.
+
+3. http://scrapy-chs.readthedocs.org/zh_CN/latest/intro/tutorial.html
