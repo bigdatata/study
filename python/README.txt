@@ -10,5 +10,9 @@ https://www.gitbook.com/book/kxxoling/python-one-to-million/details
 pip install tornado
 
 
-http://blog.jobbole.com/72306/
 15个最受欢迎的Python开源框架
+http://blog.jobbole.com/72306/
+
+
+使用豆瓣的pypi源
+pip install -i http://pypi.douban.com/simple/ scrapyd --trusted-host pypi.douban.com
