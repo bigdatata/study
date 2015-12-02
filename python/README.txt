@@ -16,3 +16,4 @@ http://blog.jobbole.com/72306/
 
 使用豆瓣的pypi源
 pip install -i http://pypi.douban.com/simple/ scrapyd --trusted-host pypi.douban.com
+pip install -i http://pypi.douban.com/simple/ pytesser --trusted-host pypi.douban.com

@@ -1,7 +1,7 @@
 from PIL import Image
 import sys
-
-def ocr(im, threshold = 200, mask = "small.png", aplhabet = "0123456789abcdefghijklmnopqrstuvwxyz"):
+# abcdefghijklmnopqrstuvwxyz
+def ocr(im, threshold = 200, mask = "letters.bmp", aplhabet = "0123456789"):
 	img = Image.open(im)
 	img = img.convert("RGB")
 	box = (8, 8, 58, 18)
