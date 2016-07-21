@@ -17,7 +17,7 @@
 # 要使用PIL的滤镜功能，需要引入ImageFilter模块
 __author__ = 'luotao'
 from PIL import ImageFilter
-from PIL import Image
+from PIL import Image,ImageEnhance
 import pytesser
 
 import os
