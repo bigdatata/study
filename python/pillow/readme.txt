@@ -1,0 +1,1 @@
+http://pillow.readthedocs.org/en/latest/

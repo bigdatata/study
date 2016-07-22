@@ -29,5 +29,11 @@ pip install scipy --trusted-host pypi.douban.com
 
 http://aka.ms/vcpython27
 
+使用豆瓣的pypi源
+pip install -i http://pypi.douban.com/simple/ scrapyd --trusted-host pypi.douban.com
+pip install -i http://pypi.douban.com/simple/ pytesser --trusted-host pypi.douban.com
+
+pip install -i http://pypi.douban.com/simple/  youtube-dl --trusted-host pypi.douban.com
+pip upgrade -i http://pypi.douban.com/simple/  pyspider --trusted-host pypi.douban.com
 http://sourceforge.net/projects/scipy/files/scipy/
 
