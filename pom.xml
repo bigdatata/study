@@ -17,6 +17,7 @@
         <module>search</module>
         <module>selenium</module>
         <module>java_log</module>
+        <module>kafka</module>
     </modules>
 
     <properties>
